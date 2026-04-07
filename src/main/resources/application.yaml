@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: userauthbkes
+    
+  config:
+    import: optional:configserver:http://localhost:8888
+    
+  datasource:
+    url: jdbc:mysql://localhost:3306/userauthms_dev
+    username: userauthms
+    password: UserAuth_Pass!123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+server:
+  port: 8080
+  servlet:
+    context-path: /auth
